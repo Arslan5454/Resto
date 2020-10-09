@@ -87,8 +87,9 @@ class RestaurantController extends Controller
         }
     }
     function logout(Request $req){
-       Auth::logout();
-        return redirect('/login');
+        Auth::logout();
+        Session::flush('message', 'You have successfully logged out');
+        return redirect("/login");
     }
     
 }

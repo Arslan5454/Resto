@@ -16,6 +16,11 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<style>
+    a i:hover{
+        color: red;
+    }
+</style>
 
 <body>
     <header>
@@ -28,6 +33,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav" class="col-sm-10">
                 <ul class="navbar-nav">
+                    @if(session('user'))
                     <li class="nav-item active">
                         <a class="nav-link" href="/">Home</a>
                     </li>
@@ -40,11 +46,17 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Search</a>
                     </li>
-
-
-                    @if(session('user'))
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a class="nav-link " href="/register">Welcome, {{session('user')}}</a>
-
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="nav-link " href="{{url('logout')}}"><i class='fa fa-sign-out'></i></a>
                     @else
                     <li class="nav-item">
                         <a class="nav-link " href="/login">Login</a>
@@ -54,13 +66,6 @@
                     </li>
                     @endif
 
-                </ul>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarNav" class="col-sm-2">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link " href="{{url('logout')}}"><i class='fa fa-sign-out'></i></a>
-                    </li>
                 </ul>
             </div>
         </nav>
