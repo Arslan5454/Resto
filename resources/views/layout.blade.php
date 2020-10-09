@@ -14,7 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -23,10 +23,10 @@
             <a class="navbar-brand" href="#">Resto</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            
+
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav" class="col-sm-10">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="/">Home</a>
@@ -41,8 +41,10 @@
                         <a class="nav-link" href="#">Search</a>
                     </li>
 
+
                     @if(session('user'))
                     <a class="nav-link " href="/register">Welcome, {{session('user')}}</a>
+
                     @else
                     <li class="nav-item">
                         <a class="nav-link " href="/login">Login</a>
@@ -51,6 +53,14 @@
                         <a class="nav-link " href="/register">Registration</a>
                     </li>
                     @endif
+
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav" class="col-sm-2">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " href="{{url('logout')}}"><i class='fa fa-sign-out'></i></a>
+                    </li>
                 </ul>
             </div>
         </nav>

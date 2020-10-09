@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Auth;
 use App\Restaurant;
 use App\Users;
 use Session;
@@ -84,6 +85,10 @@ class RestaurantController extends Controller
             Session::put('user', $user[0]->name);
             return redirect('/');
         }
+    }
+    function logout(Request $req){
+       Auth::logout();
+        return redirect('/login');
     }
     
 }

@@ -27,6 +27,7 @@ Route::group(['middleware', 'web'], function()
     Route::post('/register', 'RestaurantController@register');
     Route::view('login','login');
     Route::post('/login', 'RestaurantController@login');
+    Route::get('/logout', 'RestaurantController@logout');
 });
 
 
