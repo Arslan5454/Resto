@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Restaurant;
 use App\Users;
+use App\Booking;
 use Session;
 use Crypt;
 use Illuminate\Http\Request;
@@ -90,6 +91,17 @@ class RestaurantController extends Controller
         Auth::logout();
         Session::flush('message', 'You have successfully logged out');
         return redirect("/login");
+    }
+    function booking(Request $req)
+    {
+        $booking= new Booking;
+        $booking->date=$req->input('date');
+        $booking->time=$req->input('time');
+        $booking->person=$req->input('person');
+        $booking->seat_no=$req->input('seat');
+        $booking->save();
+        Session::flash('status', 'Reserve your Table Succesfully');
+        return redirect('/booking');
     }
     
 }

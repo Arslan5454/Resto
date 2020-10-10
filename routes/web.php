@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::group(['middleware', 'web'], function()
 {
     Route::get('/', 'RestaurantController@index');
@@ -28,6 +28,8 @@ Route::group(['middleware', 'web'], function()
     Route::view('login','login');
     Route::post('/login', 'RestaurantController@login');
     Route::get('/logout', 'RestaurantController@logout');
+    Route::post('/booking', 'RestaurantController@booking');
+    Route::view('/booking', 'booking');
 });
 
 
