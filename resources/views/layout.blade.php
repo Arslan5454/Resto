@@ -31,6 +31,7 @@
     <!-- <link rel="stylesheet" href="{{ URL::to('css/bootstrap.min.css') }}"> -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ URL::to('css/style.css') }}">
+    <!-- <script src="{{ URL::to('js/main.js') }}"></script> -->
 </head>
 <style>
 a i:hover {

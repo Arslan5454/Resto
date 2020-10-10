@@ -1,6 +1,10 @@
 @extends('layout')
 @section('content')
+<body >
+<!-- style="background-image: url('img/restaurant/1.jpg');" -->
+<div class="header_booking">
 <h1>Booking Table</h1>
+</div>
 <br>
 @if(session('status'))
 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -10,7 +14,7 @@
     </button>
 </div>
 @endif
-<div class="booking_form">
+<div class="booking_form" class="select">
     <form action="booking" method="post">
 
         @csrf
@@ -21,7 +25,7 @@
         <label>Timing:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <i class="fa fa-clock-o"></i>
         &nbsp;&nbsp;&nbsp;
-        <select class="clock text-field" id="ot_time" name="time">
+        <select  class="select" name="time">
             <option value="12:00 AM">12:00 AM</option>
             <option value="12:30 AM">12:30 AM</option>
             <option value="1:00 AM">1:00 AM</option>
@@ -77,7 +81,7 @@
         <label>Person:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <i class="fa fa-users"></i>
         &nbsp;&nbsp;&nbsp;
-        <select class="text-field" id="ot_people" name="person">
+        <select class="select" id="ot_people" name="person">
             <option value="1">1 person</option>
             <option value="2">2 people</option>
             <option value="3">3 people</option>
@@ -161,4 +165,5 @@
     </div>
 
 </div>
+</body>
 @stop
