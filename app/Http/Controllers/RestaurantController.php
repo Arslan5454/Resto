@@ -69,10 +69,18 @@ class RestaurantController extends Controller
 
     function register(Request $req) 
     {
+        $req-> validate([
+            'name'=>'required|max:120 ',
+            'email'=>'required|email',
+            'password'=>'required|between:8,15',
+            'cpassword'=>'required|same:password',
+            'contactno'=>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:11'
+        ]);
         $user= new Users;
         $user->name=$req->input('name');
         $user->email=$req->input('email');
-        $user->password=Crypt::encrypt($req->input('password'));
+        $user->password= Crypt::encrypt($req->input('password')); //$req->input('password');                             
+        $user->cpassword=Crypt::encrypt($req->input('cpassword'));                              // Crypt::encrypt($req->input('password'));
         $user->contactno=$req->input('contactno');
         $user->save();
         Session::put('user', $req->input('name'));
@@ -80,11 +88,20 @@ class RestaurantController extends Controller
     }
     function login(Request $req)
     {
+        $req-> validate([
+            'email'=>'required|email',
+            'password'=>'required'
+        ]);
         $user= Users::where("email", $req->input('email'))->get();
         if(Crypt::decrypt($user[0]->password)== $req->input('password'))
         {
             Session::put('user', $user[0]->name);
             return redirect('/');
+        }
+        elseif (!Auth::attempt(request(['email', 'password']))) {
+            return back()->withErrors([
+                'message' => 'Wrong Email or Password!'
+            ]);
         }
     }
     function logout(Request $req){
