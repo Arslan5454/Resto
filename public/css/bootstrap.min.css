@@ -5718,7 +5718,8 @@ button.close {
 }
 
 .modal-backdrop.show {
-    opacity: .5
+    opacity: .5;
+	z-index: 1049;
 }
 
 .modal-header {
