@@ -9,7 +9,7 @@
     </button>
 </div>
 @endif
-<div class="col-sm-8">
+<div class="col-lg-4">
     <form action="login" method="post">
         @csrf
         <div class="form-group">

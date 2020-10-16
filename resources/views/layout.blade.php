@@ -3,6 +3,7 @@
 
 <head>
     <title>Resturant App</title>
+    <link rel="shortcut icon" href="{{ URL::to('css/img/restaurant/1.jpg') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -20,15 +21,9 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 
-    <script type="text/javascript">
-    $(function() {
-        $("#datepicker").datepicker({
-            dateFormat: "yy-mm-dd"
-        }).val()
-    });
-    </script>
+
     <!-- CSS here -->
-    <!-- <link rel="stylesheet" href="{{ URL::to('css/bootstrap.min.css') }}"> -->
+    <link rel="stylesheet" href="{{ URL::to('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ URL::to('css/style.css') }}">
     <!-- <script src="{{ URL::to('js/main.js') }}"></script> -->
@@ -37,19 +32,21 @@
 a i:hover {
     color: red;
 }
+
 .booking_form input[type=text] {
-  width: 80%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid red;
-  border-radius: 4px;
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
 }
 </style>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="font-color:white">
+
             <a class="navbar-brand" href="#">Resto</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,6 +71,7 @@ a i:hover {
                     <li class="nav-item">
                         <a class="nav-link" href="/booking">Book a Table</a>
                     </li>
+                    
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

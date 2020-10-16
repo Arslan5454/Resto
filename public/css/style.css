@@ -9,11 +9,15 @@
   background: #2c3e50;
   background-image: none;
 }
+
 /* Remove IE arrow */
+
 /* .select::-ms-expand {
   display: none;
 } */
+
 /* Custom Select */
+
 .select {
   position: relative;
   /* display: flex; */
@@ -24,17 +28,33 @@
   overflow: hidden;
   border-radius: .25em;
 }
+
 .select {
   flex: 1;
   padding: 0 .5em;
   color: #fff;
   cursor: pointer;
 }
-body #bg_booking{
-  background-image: URL('css/style.css') ;
+
+body #bg_booking {
+  background-image: URL('css/style.css');
 }
-.header_booking h1{
+
+.header_booking h1 {
   color: red;
   font-weight: 600;
-  
+  font-family: "Nunito", sans-serif;
+  Font: 'Nunito';
+}
+
+.booking_form label, p, h1, span {
+  font-family: "Nunito", sans-serif;
+  Font: 'Nunito';
+  font-weight: 700;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-decoration: none solid rgb(255, 255, 255);
+  text-align: left;
+  text-indent: 0px;
 }

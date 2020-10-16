@@ -19,7 +19,7 @@
 
         @csrf
         <label>Select Date:</label>&nbsp;&nbsp;
-        <i class="fa fa-calendar">&nbsp;&nbsp;&nbsp;<input type="text" name="date" id="datepicker" size="30" /></i>
+        <i class="fa fa-calendar">&nbsp;&nbsp;&nbsp;<input type="date" size="30" name="date" /></i>
         <br>
         <br>
         <label>Timing:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
